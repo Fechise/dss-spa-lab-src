@@ -1,0 +1,120 @@
+/* ...existing code... */
+
+.productos {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 16px;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  color: #222;
+}
+
+.productos h2 {
+  margin: 0 0 12px 0;
+  font-size: 1.4rem;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+  align-items: center;
+}
+
+.form input[type="text"],
+.form input[type="number"],
+.form input {
+  flex: 1 1 200px;
+  padding: 8px 10px;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.form button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 4px;
+  background: #1976d2;
+  color: #fff;
+  cursor: pointer;
+}
+
+.form button[type="button"] {
+  background: #666;
+}
+
+.form button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Loader */
+.cargando {
+  text-align: center;
+  padding: 20px 0;
+  color: #555;
+}
+
+/* Tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  background: #fff;
+}
+
+th, td {
+  padding: 8px 10px;
+  border: 1px solid #e6e6e6;
+  text-align: left;
+  vertical-align: middle;
+}
+
+th {
+  background: #f5f5f5;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+td .actions button {
+  margin-right: 6px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.actions .edit {
+  background: #0288d1;
+  color: #fff;
+}
+
+.actions .delete {
+  background: #d32f2f;
+  color: #fff;
+}
+
+/* Mensajes de error/validación */
+.error {
+  color: #b00020;
+  font-size: 0.88rem;
+  margin-top: 6px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .form {
+    gap: 8px;
+  }
+  .form input {
+    flex: 1 1 100%;
+  }
+  th, td {
+    font-size: 0.95rem;
+    padding: 6px 8px;
+  }
+}

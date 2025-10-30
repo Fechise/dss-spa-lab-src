@@ -11,6 +11,10 @@
 npm-debug.log
 yarn-error.log
 
+# Build
+/dist
+/build
+
 # IDEs and editors
 .idea/
 .project
@@ -20,23 +24,34 @@ yarn-error.log
 .settings/
 *.sublime-workspace
 
-# Visual Studio Code
+# Visual Studio Code (usar solo settings/tasks/launch si quieres compartirlos)
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-.history/*
 
-# Miscellaneous
+# Angular / other caches
 /.angular/cache
 .sass-cache/
-/connect.lock
 /coverage
-/libpeerconnection.log
-testem.log
 /typings
 
 # System files
 .DS_Store
 Thumbs.db
+
+# Backups / local stuff
+spa-lab-src-backup/
+.env
+
+# Ignore nested git metadata (si quedó algún repo dentro)
+spa-lab-src/.git
+
+# Ignore angular cache and common build/node folders inside subproject
+spa-lab-src/.angular/
+spa-lab-src/node_modules/
+spa-lab-src/dist/
+spa-lab-src/.vite/
+spa-lab-src-backup/
+
