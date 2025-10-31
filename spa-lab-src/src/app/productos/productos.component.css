@@ -1,120 +1,93 @@
-/* ...existing code... */
+/*
+  Definimos una paleta de colores verdes usando variables CSS.
+  Esto hace que sea fácil cambiar el tema en el futuro.
+*/
+:host {
+  --primary-green: #198754; /* Verde oscuro y elegante (de Bootstrap 5) */
+  --light-green: #e8f5e9;   /* Verde muy pálido para fondos y acentos */
+  --hover-green: #157347;   /* Verde más oscuro para el efecto hover */
+  --focus-glow: rgba(25, 135, 84, 0.25); /* Resplandor verde para los inputs */
+  --text-on-green: #ffffff; /* Texto blanco para botones */
+}
 
+/* Estilo para el contenedor principal del componente */
 .productos {
-  max-width: 1000px;
-  margin: 20px auto;
-  padding: 16px;
-  box-sizing: border-box;
-  font-family: "Segoe UI", Roboto, Arial, sans-serif;
-  color: #222;
+  background-color: #fcfdfc; /* Un fondo casi blanco pero con un toque verde */
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e0e0e0;
 }
 
-.productos h2 {
-  margin: 0 0 12px 0;
-  font-size: 1.4rem;
-}
-
-.form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 14px;
-  align-items: center;
-}
-
-.form input[type="text"],
-.form input[type="number"],
-.form input {
-  flex: 1 1 200px;
-  padding: 8px 10px;
-  border: 1px solid #d0d0d0;
-  border-radius: 4px;
-  background: #fff;
-  box-sizing: border-box;
-}
-
-.form button {
-  padding: 8px 14px;
-  border: none;
-  border-radius: 4px;
-  background: #1976d2;
-  color: #fff;
-  cursor: pointer;
-}
-
-.form button[type="button"] {
-  background: #666;
-}
-
-.form button[disabled] {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-/* Loader */
-.cargando {
-  text-align: center;
-  padding: 20px 0;
-  color: #555;
-}
-
-/* Tabla */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 8px;
-  background: #fff;
-}
-
-th, td {
-  padding: 8px 10px;
-  border: 1px solid #e6e6e6;
-  text-align: left;
-  vertical-align: middle;
-}
-
-th {
-  background: #f5f5f5;
+/* Título principal */
+h2 {
+  color: var(--primary-green);
   font-weight: 600;
-  font-size: 0.95rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--light-green);
+  margin-bottom: 2rem !important;
 }
 
-td .actions button {
-  margin-right: 6px;
-  padding: 6px 10px;
-  border-radius: 4px;
-  border: none;
-  cursor: pointer;
-  font-size: 0.9rem;
+/* Estilo para los inputs cuando están en foco (seleccionados) */
+.form-control:focus {
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 0.25rem var(--focus-glow);
 }
 
-.actions .edit {
-  background: #0288d1;
-  color: #fff;
+/*
+  Sobrescribimos los estilos del botón primario de Bootstrap
+  para que use nuestra paleta de verdes.
+*/
+.btn-primary {
+  background-color: var(--primary-green);
+  border-color: var(--primary-green);
+  color: var(--text-on-green);
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out; /* Añadimos una transición suave */
 }
 
-.actions .delete {
-  background: #d32f2f;
-  color: #fff;
+/*
+  CORRECCIÓN HOVER:
+  Hacemos el color de fondo más oscuro y añadimos un ligero efecto de "levantamiento"
+  para que el hover sea mucho más evidente.
+*/
+.btn-primary:hover {
+  background-color: var(--hover-green);
+  border-color: var(--hover-green);
+  transform: translateY(-2px); /* Efecto de levantar el botón */
 }
 
-/* Mensajes de error/validación */
-.error {
-  color: #b00020;
-  font-size: 0.88rem;
-  margin-top: 6px;
+/*
+  CORRECCIÓN DESHABILITADO:
+  En lugar de usar opacidad, usamos un color verde más pálido y "apagado".
+  Esto lo hace visible pero claramente inactivo, sin desaparecer en el fondo.
+*/
+.btn-primary:disabled,
+.btn-primary.disabled {
+  background-color: #a3d1b8; /* Un verde pálido y desaturado */
+  border-color: #a3d1b8;
+  color: #fcfdfc;
+  opacity: 1; /* Quitamos la opacidad para que el color sea sólido */
 }
 
-/* Responsive */
-@media (max-width: 640px) {
-  .form {
-    gap: 8px;
-  }
-  .form input {
-    flex: 1 1 100%;
-  }
-  th, td {
-    font-size: 0.95rem;
-    padding: 6px 8px;
-  }
+/*
+  Estilos para la tabla, haciéndola más limpia y temática.
+*/
+.table {
+  border-radius: 8px;
+  overflow: hidden; /* Para que el borde redondeado se aplique a la tabla */
+}
+
+.table thead {
+  background-color: var(--primary-green);
+  color: var(--text-on-green);
+}
+
+.table thead th {
+  border-bottom: none; /* Quitamos la doble línea */
+}
+
+/* Personalizamos las rayas de la tabla */
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  background-color: var(--light-green);
 }

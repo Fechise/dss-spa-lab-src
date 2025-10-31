@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ClientesComponent } from './clientes/clientes.component';
 import { ProductosComponent } from './productos/productos.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -22,10 +23,11 @@ import { ProductosComponent } from './productos/productos.component';
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
-    FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

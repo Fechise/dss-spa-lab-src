@@ -1,3 +1,12 @@
-/* Global styles */
-body { font-family: Arial, Helvetica, sans-serif; margin: 0; padding: 0 16px; background: #f5f5f5; color: #222; }
+/* Global styles - no prebuilt Material theme import (usamos custom-theme.scss) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
+  padding: 0 16px;
+  background: #f5f5f5;
+  color: #222;
+}
 a { color: inherit; text-decoration: none; }
